@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Used Items Store</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f8f9fa;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            width: 80%;
+            margin: auto;
+        }
+        h1 {
+            color: #333;
+        }
+        .product {
+            display: inline-block;
+            margin: 20px;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            padding: 15px;
+            background-color: #fff;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            cursor: pointer;
+        }
+        .product img {
+            width: 200px;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Welcome to Our Used Items Store</h1>
+        <div class="product" onclick="contactSeller('Used Laptop', '200$')">
+            <img src="laptop.jpg" alt="Used Laptop">
+            <p>Used Laptop - $200</p>
+        </div>
+        <div class="product" onclick="contactSeller('Smartphone', '150$')">
+            <img src="phone.jpg" alt="Smartphone">
+            <p>Smartphone - $150</p>
+        </div>
+    </div>
+
+    <script>
+        function contactSeller(productName, price) {
+            let phone = atob('MDA5MjMxNDk2OTk4OTM='); // Encoded WhatsApp number
+            let message = encodeURIComponent(`Hello, I'm interested in ${productName} priced at ${price}.`);
+            window.location.href = `https://wa.me/${phone}?text=${message}`;
+        }
+    </script>
+</body>
+</html>
